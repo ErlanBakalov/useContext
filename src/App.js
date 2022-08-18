@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import {  useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import List1 from "./components/List1";
+import List2 from "./components/List2";
+import List3 from "./components/List3";
+import myContext from "./components/store/myContext";
+import Swith from "./components/Swith";
 
 function App() {
+  // const [name,setName]=useState('')
+  // const children = (e) => {
+  //   setName(e);
+  // };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Swith children={children} /> */}
+      {/* <h1>{name}</h1> */}
+      <Header />
+      <myContext.Provider value={{ value: "ffff" }}>
+        <List1 />
+        <List2 />
+        <List3 />
+      </myContext.Provider>
     </div>
   );
 }
